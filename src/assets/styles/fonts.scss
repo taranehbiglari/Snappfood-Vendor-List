@@ -1,0 +1,62 @@
+@font-face {
+	font-family: 'IranSans';
+	src: url('../fonts/IRANSansWeb_Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'IranSans';
+	src: url('../fonts/IRANSansWeb.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'IranSans';
+	src: url('../fonts/IRANSansWeb_Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'IranSans';
+	src: url('../fonts/IRANSansWeb_Bold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+// FONT-SIZES
+$fs-0: 10px;
+$fs-1: 12px;
+$fs-2: 14px;
+$fs-3: 16px;
+$fs-4: 18px;
+
+.fs-0{
+	font-size: $fs-0;
+}
+.fs-1{
+	font-size: $fs-1;
+}
+.fs-2{
+	font-size: $fs-2;
+}
+.fs-3{
+	font-size: $fs-3;
+}
+.fs-4{
+	font-size: $fs-4;
+}
+
+
+// FONT-WEIGHT
+@for $i from 300 through 600 {
+    .fw-#{$i} {
+       font-weight: 0 + ($i * 1);
+      }
+    }

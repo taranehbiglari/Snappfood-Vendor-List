@@ -1,5 +1,19 @@
-@import url('./font.scss');
+@import url('./fonts.scss');
+@import url('./colors.scss');
 
 * {
 	font-family: 'IranSans';
+}
+
+body{
+	display: flex;
+	justify-content: center;
+	text-align: right;
+	direction: rtl;
+	margin:0;
+	margin-top: 20px;
+}
+
+#root{
+	width: 100%;
 }
