@@ -1,20 +1,14 @@
 import './assets/styles/main.scss';
+import VendorList from "./pages/VendorList";
+import Home from "./pages/Home";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       <h1>ترانه</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div><Routes>
+    <Route path="/vendor-list" element={<VendorList />} />
+    <Route path="/home" element={<Home />} />
+  </Routes></div>
   );
 }
 
