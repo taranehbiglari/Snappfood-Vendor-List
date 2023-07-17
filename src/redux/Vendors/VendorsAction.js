@@ -9,8 +9,10 @@ export const getVendorsListAction = (params) => {
         const response = await instance.get(getVendorsListService(), {
             params,
         });
-        console.log(response, '')
-        dispatch({ type: VENDORS.GET_VENDORS_LIST.SUCCESS, payload: response.data.results });
+        dispatch({ type: VENDORS.GET_VENDORS_LIST.SUCCESS, payload: {
+          data: response.data.data,
+          page: params.page,
+        } });
       } catch (e) {
         dispatch({ type: VENDORS.GET_VENDORS_LIST.ERROR });
       }

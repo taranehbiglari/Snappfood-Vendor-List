@@ -3,9 +3,18 @@ import { VENDORS } from "./VendorsConstant";
 const initialState = {
   list: {
     loading: false,
-    data: [],
+    finalResult: [],
     failed: false,
+    total: 0,
+    openCount: 0,
   },
+};
+
+const serializerList = (state, payload) => {
+  if (payload.page > 0) {
+    return [...state, ...payload.data.finalResult.filter((item) => item.type === 'VENDOR')]
+  }
+  return payload.data.finalResult.filter((item) => item.type === 'VENDOR');
 };
 
 const VendorReducer = (state = initialState, action) => {
@@ -14,9 +23,8 @@ const VendorReducer = (state = initialState, action) => {
       return {
         ...state,
         list: {
+          ...state.list,
           loading: true,
-          data: [],
-          failed: false,
         },
       };
     case VENDORS.GET_VENDORS_LIST.SUCCESS:
@@ -24,8 +32,10 @@ const VendorReducer = (state = initialState, action) => {
         ...state,
         list: {
           loading: false,
-          data: action.payload,
+          finalResult: serializerList(state.list.finalResult, action.payload),
           failed: false,
+          total: action.payload.data.count,
+          openCount: action.payload.data.open_count,
         },
       };
     case VENDORS.GET_VENDORS_LIST.ERROR:
@@ -33,7 +43,7 @@ const VendorReducer = (state = initialState, action) => {
         ...state,
         list: {
           loading: false,
-          data: [],
+          finalResult: [],
           failed: true,
         },
       };

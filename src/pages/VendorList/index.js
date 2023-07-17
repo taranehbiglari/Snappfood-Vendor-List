@@ -3,7 +3,9 @@ import VendorsList from "../../components/Vendors";
 
 const Vendors = () => {
   return (
-    <VendorsList />
+    <>
+      <VendorsList />
+    </>
   )
 };
 

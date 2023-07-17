@@ -1,45 +1,65 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import VendorCard from "./VendorCard";
 import { getVendorsListAction } from "../../redux/Vendors/VendorsAction";
+import useObserver from "../../hooks/useObserver";
 
 const VendorsList = () => {
-    const dispatch = useDispatch();
-    const lat = useRef('35.7876592');
-    const long = useRef('51.3784825');
-    const page = useRef(0);
-    const pageSize = useRef(10);
+  const dispatch = useDispatch();
+  const { loading, finalResult, total } = useSelector(
+    (state) => state.vendors.list
+  );
+  const hasMore = total > finalResult.length;
+  const lat = useRef("35.7876592");
+  const long = useRef("51.3784825");
+  const pageSize = useRef(10);
+  const [page, setPage] = useState(0);
+  const { observableElement: loadingRef } = useObserver({
+    callback() {
+      setPage((prevState) => prevState + 1);
+    },
+    options: { threshold: 0.3 },
+  });
 
-    const getLocation = () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                lat.current = position.coords.latitude;
-                long.current = position.coords.longitude;
-            });
-        } else {
-            console.error('Geolocation is not supported by this browser.');
-        }
-    };
-
-    const getData = () => {
-        getLocation();
-        const params = {
-            page: page.current,
-            page_size: pageSize.current,
-            lat: lat.current,
-            long: long.current,
-        };
-        dispatch(getVendorsListAction(params));
+  const getLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        lat.current = position.coords.latitude;
+        long.current = position.coords.longitude;
+      });
+    } else {
+      console.error("Geolocation is not supported by this browser.");
     }
+  };
 
-    useEffect (() => {
-        getData();
-    }, []);
-    return (
-        <>
-            <div>vendor list</div>
-        </>
-    );
+  const getData = () => {
+    getLocation();
+    const params = {
+      page,
+      page_size: pageSize.current,
+      lat: lat.current,
+      long: long.current,
+    };
+    dispatch(getVendorsListAction(params));
+  };
+
+  useEffect(() => {
+    getData();
+  }, [page]);
+  return (
+    <>
+      <div>
+        <ul>
+          {finalResult.map((vendor) => (
+            <li key={vendor.data.id}>
+              <VendorCard data={vendor.data} />
+            </li>
+          ))}
+          {hasMore && !loading && <div ref={loadingRef}>loading...</div>}
+        </ul>
+      </div>
+    </>
+  );
 };
 
 export default VendorsList;
