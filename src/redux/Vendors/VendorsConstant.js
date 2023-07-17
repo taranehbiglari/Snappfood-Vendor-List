@@ -1,0 +1,7 @@
+export const VENDORS = {
+    GET_VENDORS_LIST: {
+        REQUEST: 'GET_VENDORS_LIST_REQUEST',
+        SUCCESS: 'GET_VENDORS_LIST_SUCCESS',
+        ERROR: 'GET_VENDORS_LIST_ERROR',
+    }
+}

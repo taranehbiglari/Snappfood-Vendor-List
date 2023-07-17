@@ -1,8 +1,11 @@
-import VendorCard from "../../components/VendorCard";
-import style from './style.module.scss';
+import React from "react";
+import VendorsList from "../../components/Vendors";
 
-const VendorList = () => {
-  return <div className={style.list}><VendorCard /></div>
+const Vendors = () => {
+  return (
+    <VendorsList />
+  )
 };
 
-export default VendorList;
+export default Vendors;
+
