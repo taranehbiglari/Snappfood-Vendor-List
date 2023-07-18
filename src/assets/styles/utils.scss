@@ -1,0 +1,69 @@
+//BORDERS
+.border-none{
+    border: none;
+}
+
+.rounded{
+    border-radius: 6px;
+}
+
+//PADDING
+.p-1{
+    padding: 6px;
+}
+
+.p-2{
+    padding: 12px;
+}
+
+.p-3{
+    padding: 20px;
+}
+
+//MARGIN
+.m-1{
+    margin: 6px;
+}
+
+.m-2{
+    margin: 12px;
+}
+
+.m-3{
+    margin: 20px;
+}
+
+//DISPLAY
+.d-flex{
+    display:flex;
+}
+.justify-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+.flex-column{
+    flex-flow: column;
+}
+
+//SIZES
+.w-100{
+    width: 100%;
+}
+.h-100{
+    height: 100%;
+}
+
+.w-100vh{
+    width:100vh;
+}
+
+.h-100vh{
+    height:100vh;
+}
+
+//SHADOW
+.shadow{
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}

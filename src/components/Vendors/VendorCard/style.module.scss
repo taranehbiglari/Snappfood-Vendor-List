@@ -1,36 +1,15 @@
-//Colors
-$dark: #404040;
-$grey: #a3a3a3;
-$grey-lighter: #f8f9fb;
-$grey-light: #e6e6e6;
-$green: #5ba839;
-$green-light: #8ada68b0;
-
-//Fonts
-$fs-0: 10px;
-$fs-1: 12px;
-$fs-2: 14px;
-$fs-3: 16px;
-$fs-4: 18px;
-
 .card {
-  margin: 1rem;
-  width: 100%;
+  margin-bottom: 20px;
   height: 248px;
   border-radius: 6px 6px 8px 8px;
-  border: solid 1px $grey-light;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   max-width: 567px;
-  background-image: url("~/src/assets/images/img.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   &__caption {
-    background-color: #ffffff;
     position: absolute;
     bottom: 0;
-    width: 100%;
     height: 110px;
     border-radius: 0 0 6px 6px;
     &__header {
@@ -54,29 +33,15 @@ $fs-4: 18px;
     &__description {
       padding: 0 1rem;
       font-size: 12px;
-      margin-top:3px;
+      margin-top: 3px;
       font-weight: 400;
-    }
-    &__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 6px 6px 0 0;
-      overflow: hidden;
     }
     &__delivery {
       padding: 0 1rem;
-      font-size: 12px;
       margin-top: 10px;
       &__type {
-        font-weight: 300;
         color: #959595;
         margin-left: 5px;
-      }
-      &__price {
-        font-weight: 300;
-        color: #000;
       }
     }
   }
@@ -90,16 +55,14 @@ $fs-4: 18px;
     border-radius: 8px;
     background-color: #ffffff;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
-    background-image: url("~/src/assets/images/logo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
 }
 
-@media only screen and (max-width: 600px)  {
-  .card{
-    width: calc(100% - 32px);
-    margin:0;
+@media only screen and (max-width: 600px) {
+  .card {
+    margin: 10px 20px;
   }
 }

@@ -3,3 +3,50 @@ $grey: #a3a3a3;
 $grey-light: #f8f9fb;
 $green: #5ba839;
 $green-light: #8ada68b0;
+$primary: #ff00a4;
+$white: #fff;
+$black: #000;
+
+//BACKGOUND-COLORS
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-green-light {
+  background-color: $green-light;
+}
+
+.bg-grey-light {
+  background-color: $grey-light;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+//TEXT-COLORS
+.text-dark {
+  color: $dark;
+}
+
+.text-green {
+  color: $green;
+}
+
+.text-grey {
+  color: $grey;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-black {
+  color: $black;
+}
+
+//BORDERS
+
+.border-light{
+  border: 1px solid $grey-light;
+}

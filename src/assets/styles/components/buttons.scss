@@ -1,0 +1,12 @@
+@mixin button{
+    font-size: 24px;
+    transition-duration: 0.4s;
+}
+
+.button-primary{
+    @include button;
+    background-color: #ff00a4;
+    &:hover{
+        background-color: #d3038a
+    }
+}

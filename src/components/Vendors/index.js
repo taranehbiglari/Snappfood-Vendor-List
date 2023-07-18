@@ -48,15 +48,13 @@ const VendorsList = () => {
   }, [page]);
   return (
     <>
-      <div>
-        <ul>
+      <div className="d-flex justify-center flex-column">
           {finalResult.map((vendor) => (
-            <li key={vendor.data.id}>
-              <VendorCard data={vendor.data} />
-            </li>
+            <div key={vendor.data.id}>
+              <VendorCard key={vendor.data.id} data={vendor.data} />
+            </div>
           ))}
           {hasMore && !loading && <div ref={loadingRef}>loading...</div>}
-        </ul>
       </div>
     </>
   );
