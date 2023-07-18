@@ -6,7 +6,7 @@ import useObserver from "../../hooks/useObserver";
 
 const VendorsList = () => {
   const dispatch = useDispatch();
-  const { loading, finalResult, total } = useSelector(
+  const { loading, finalResult, total, openCount } = useSelector(
     (state) => state.vendors.list
   );
   const hasMore = total > finalResult.length;
@@ -48,13 +48,16 @@ const VendorsList = () => {
   }, [page]);
   return (
     <>
-      <div className="d-flex justify-center flex-column">
+      <h3 className="px-4">{openCount} فروشنده‌ی باز</h3>
+      <div className="d-flex justify-center">
+        <div className="d-flex justify-center flex-column">
           {finalResult.map((vendor) => (
             <div key={vendor.data.id}>
               <VendorCard key={vendor.data.id} data={vendor.data} />
             </div>
           ))}
           {hasMore && !loading && <div ref={loadingRef}>loading...</div>}
+        </div>
       </div>
     </>
   );

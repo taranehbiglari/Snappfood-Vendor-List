@@ -3,43 +3,37 @@
   height: 248px;
   border-radius: 6px 6px 8px 8px;
   max-width: 567px;
+  width: 90vw;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  &__caption {
+  &__body {
     position: absolute;
     bottom: 0;
     height: 110px;
     border-radius: 0 0 6px 6px;
-    &__header {
-      padding: 0 1rem;
-      margin-top: 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      &__title {
+      &_title {
         font-weight: 500;
         font-size: 14px;
       }
-      &__rating {
+      &_rating {
         padding: 2px 4px 2px 2px;
         border-radius: 4px;
         background-color: rgba(63, 126, 0, 0.08);
         color: #305d02;
         margin-right: 4px;
+        width: 37px;
+        height:20px;
+        &Star{
+          width:14px;
+          height: 14px;
+        }
       }
-    }
-    &__description {
-      padding: 0 1rem;
-      font-size: 12px;
-      margin-top: 3px;
-      font-weight: 400;
-    }
-    &__delivery {
+    &_delivery {
       padding: 0 1rem;
       margin-top: 10px;
-      &__type {
+      &Type {
         color: #959595;
         margin-left: 5px;
       }
@@ -61,8 +55,8 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
   .card {
-    margin: 10px 20px;
+    width: 567px;
   }
 }
