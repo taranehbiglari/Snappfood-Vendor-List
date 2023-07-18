@@ -10,8 +10,8 @@ const VendorsList = () => {
     (state) => state.vendors.list
   );
   const hasMore = total > finalResult.length;
-  const lat = useRef("35.7876592");
-  const long = useRef("51.3784825");
+  const lat = useRef("35.803892");
+  const long = useRef("51.350098");
   const pageSize = useRef(10);
   const [page, setPage] = useState(0);
   const { observableElement: loadingRef } = useObserver({
@@ -28,7 +28,7 @@ const VendorsList = () => {
         long.current = position.coords.longitude;
       });
     } else {
-      console.error("Geolocation is not supported by this browser.");
+      console.error("مرورگر شما از مکان یابی پشتیبانی نمی کند");
     }
   };
 
