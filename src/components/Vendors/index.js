@@ -56,7 +56,7 @@ const VendorsList = () => {
               <VendorCard key={vendor.data.id} data={vendor.data} />
             </div>
           ))}
-          {hasMore && !loading && <div ref={loadingRef}>loading...</div>}
+          {hasMore && !loading && <div ref={loadingRef}>بارگذاری بیشتر</div>}
         </div>
       </div>
     </>
